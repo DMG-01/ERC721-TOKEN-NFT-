@@ -48,10 +48,17 @@ deployMood:
 mintMoodNft:
 	@forge script script/Interactions.s.sol:MintMoodNft $(NETWORK_ARGS)
 
+	mint:
+	@forge script script/Interactions.s.sol:mintNft $(NETWORK_ARGS)
+
+
 flipMoodNft:
 	@forge script script/Interactions.s.sol:FlipMoodNft $(NETWORK_ARGS)
 
 	--rpc-url https://eth-sepolia.g.alchemy.com/v2/ARdICeNeCzo5ImYFmq5Ai64R4JLd9-k7 --private-key bfeeed858983348c846519cf4b5f055a9aab02408931346984e7286795767524 --broadcast --verify --etherscan-api-key AXKW6AN4NAUBZ42AFQIQY6MW25VCKUKEYT -vvvv
+
+	 forge script script/interaction.s.script.sol:MintBasicNft --rpc-url https://eth-sepolia.g.alchemy.com/v2/ARdICeNeCzo5ImYFmq5Ai64R4JLd9-k7 --private-key bfeeed858983348c846519cf4b5f055a9aab02408931346984e7286795767524 --broadcast --verify --etherscan-api-key AXKW6AN4NAUBZ42AFQIQY6MW25VCKUKEYT -vvvv
 	forge script script/Interactions.s.sol:MintBasicNft
 cast send --rpc-url https://eth-sepolia.g.alchemy.com/v2/ARdICeNeCzo5ImYFmq5Ai64R4JLd9-k7 0xca9378B2Fa5E934d90eB5eCe93AbaF3F7D13e662  "mintTo(0x251EC159AD1dfA90C82e08b6Ae9aB195B375AEEA)" --private-key=bfeeed858983348c846519cf4b5f055a9aab02408931346984e7286795767524
 	
+forge script script/interaction.s.script.sol:MintBasicNft --rpc-url https://eth-sepolia.g.alchemy.com/v2/ARdICeNeCzo5ImYFmq5Ai64R4JLd9-k7 --private-key bfeeed858983348c846519cf4b5f055a9aab02408931346984e7286795767524 --broadcast --verify --etherscan-api-key AXKW6AN4NAUBZ42AFQIQY6MW25VCKUKEYT -vvvv
